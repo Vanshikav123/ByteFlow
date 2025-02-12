@@ -19,8 +19,10 @@ import (
 )
 
 type application struct {
-	errorLog          *log.Logger
-	infoLog           *log.Logger
+	// log defination
+	errorLog *log.Logger
+	infoLog  *log.Logger
+	//
 	snippets          *models.SnippetModel
 	users             *models.UserModel
 	templateCache     map[string]*template.Template
@@ -34,6 +36,7 @@ func main() {
 	dsn := flag.String("dsn", "web:pass@/snippetbox?parseTime=true", "MySQL data source name")
 
 	flag.Parse()
+	// log.New taking three parameters first is io.writer which is stdout and stderr to log info and error respectively and shortfile for file name and line number
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
