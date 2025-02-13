@@ -37,6 +37,8 @@ func main() {
 
 	flag.Parse()
 	// log.New taking three parameters first is io.writer which is stdout and stderr to log info and error respectively and shortfile for file name and line number
+	// stdout for standard info log
+	// stderr for error
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 

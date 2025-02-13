@@ -11,6 +11,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+// Prometheus api increment middleware function
 func (app *application) withMetrics(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		app.apiRequestCounter.WithLabelValues(r.URL.Path, r.Method).Inc() // Increment counter

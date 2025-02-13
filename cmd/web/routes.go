@@ -9,6 +9,33 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
+/*
+Handler vs. HandleFunc
+Use Handler when:
+
+You need to implement a complex handler with state or additional methods.
+
+You want to reuse the same handler logic across multiple routes.
+
+Use HandleFunc when:
+
+You have a simple handler that doesn’t require state.
+
+You want to quickly register a function as a handler.
+
+Counter vs. CounterVec
+Use Counter when:
+
+You only need to track a single metric without any categorization.
+
+Example: Total number of requests.
+
+Use CounterVec when:
+
+You need to track a metric with multiple dimensions (e.g., by endpoint, method, or status).
+
+Example: Number of requests for each endpoint, grouped by HTTP method.
+*/
 func (app *application) routes() http.Handler {
 	router := httprouter.New()
 	router.NotFound = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

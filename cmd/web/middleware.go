@@ -8,6 +8,10 @@ import (
 	"github.com/justinas/nosurf"
 )
 
+/*
+This middleware adds security-related HTTP headers to every response.
+These headers help protect the application from common web vulnerabilities like cross-site scripting (XSS), clickjacking, and MIME-type sniffing.
+*/
 func secureHeaders(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
@@ -21,6 +25,16 @@ func secureHeaders(next http.Handler) http.Handler {
 	})
 }
 
+/*
+r.RemoteAddr is a field of the http.Request struct (r *http.Request) that contains the network address of the client making the request.
+r.Proto is a field of the http.Request struct that contains the HTTP protocol version used by the client.
+r.URL.RequestURI() is a method of the URL field in the http.Request struct that returns the request URI (Uniform Resource Identifier).
+
+The request URI includes the path and query string of the URL.
+
+Example
+For a request to https://example.com/path?query=123, r.URL.RequestURI() will return:
+*/
 func (app *application) logRequest(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		app.infoLog.Printf("%s - %s %s %s", r.RemoteAddr, r.Proto, r.Method, r.URL.RequestURI())

@@ -99,12 +99,8 @@ WHERE expires > UTC_TIMESTAMP() ORDER BY id DESC LIMIT 10`
 	defer rows.Close()
 	snippets := []*Snippet{}
 	/*
-
 	   In Latest(), s := &Snippet{} is created inside a loop, and we append multiple such pointers to a slice.
 	   Each iteration creates a new Snippet and its pointer is added to the snippets slice.
-
-
-
 	*/
 	for rows.Next() {
 		s := &Snippet{}
