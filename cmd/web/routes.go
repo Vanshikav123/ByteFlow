@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/Vanshikav123/gosnippet.git/ui"
+	"github.com/Vanshikav123/ByteFlow.git/ui"
 	"github.com/julienschmidt/httprouter"
 	"github.com/justinas/alice"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

@@ -1,4 +1,4 @@
-module github.com/Vanshikav123/gosnippet.git
+module github.com/Vanshikav123/ByteFlow.git
 
 go 1.23.3
 

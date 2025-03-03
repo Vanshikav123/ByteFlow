@@ -7,8 +7,8 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/Vanshikav123/gosnippet.git/internal/models"
-	"github.com/Vanshikav123/gosnippet.git/ui"
+	"github.com/Vanshikav123/ByteFlow.git/internal/models"
+	"github.com/Vanshikav123/ByteFlow.git/ui"
 	"github.com/justinas/nosurf"
 )
 

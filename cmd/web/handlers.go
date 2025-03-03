@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Vanshikav123/gosnippet.git/internal/models"
-	"github.com/Vanshikav123/gosnippet.git/internal/validator"
+	"github.com/Vanshikav123/ByteFlow.git/internal/models"
+	"github.com/Vanshikav123/ByteFlow.git/internal/validator"
 	"github.com/julienschmidt/httprouter"
 )
 

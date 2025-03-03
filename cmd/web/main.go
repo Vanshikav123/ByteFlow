@@ -10,7 +10,7 @@ import (
 	"text/template" // New import
 	"time"
 
-	"github.com/Vanshikav123/gosnippet.git/internal/models"
+	"github.com/Vanshikav123/ByteFlow.git/internal/models"
 	"github.com/alexedwards/scs/mysqlstore"
 	"github.com/alexedwards/scs/v2"
 	"github.com/go-playground/form/v4"
